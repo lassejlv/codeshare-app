@@ -10,13 +10,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       snippetsContainer.innerHTML = `
       
-        <div class="grid !m-5">
+        <div class="grid !m-5 !gap-3 !grid-cols-1 md:!grid-cols-2">
             ${snippets
               .map(
                 (snippet) =>
                   `
                  <article>
-                    <header class="items-center justify-center">
+                   
                         <h1 class="text-lg text-gray-300  font-bold">
                             ${snippet.title}  <img src="${
                     window.location.origin
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     snippet.title
                   }" class="w-10 h-10 rounded-full mr-2 object-cover inline-block ml-1" />
                         </h1>     
-                    </header>
+                 
 
                      <div class="inline-flex items-end justify-end">
                         <a role="button" href="/snippet.html?id=${
@@ -37,7 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <footer>
                         Snippet by <span class="text-white">${
                           snippet.author ?? "Anonymous"
-                        }</span>
+                        }</span> - ${snippet.views} views ${
+                    snippet.requirePassword
+                      ? "<a class='hover:no-underline text-gray-200' data-tooltip='This snippet require a password from the owner'>- 🔒</a>"
+                      : ""
+                  }
                             
                     </footer>
                  </article>
