@@ -8,7 +8,7 @@
   },
   "scripts": {
     "dev": "bun --watch run src/index.js",
-    "start": "npx prisma generate && bun run src/index.js"
+    "start": "npx prisma generate && node src/index.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
