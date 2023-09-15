@@ -35,6 +35,32 @@
 
     <include src="../components/navbar.html"></include>
 
+    <div class="flex justify-between m-10">
+      <div>
+        <h1 class="text-2xl text-gray-400 font-bold">Explore Snippets</h1>
+      </div>
+
+      <div class="w-1/6">
+        <details role="list">
+          <summary aria-haspopup="listbox">Filter</summary>
+          <ul role="listbox">
+            <li>
+              <a href="/explore.html?filter=most_viewed">
+                <i class="fas fa-eye"></i>
+                Most Views
+              </a>
+            </li>
+            <li>
+              <a href="/explore.html?filter=most_recent">
+                <i class="fas fa-clock"></i>
+                Most Recent
+              </a>
+            </li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
     <div id="snippetsContainer"></div>
 
     <script>

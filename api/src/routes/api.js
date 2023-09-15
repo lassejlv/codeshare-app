@@ -46,13 +46,22 @@ router.get("/snippet/:id", async (req, res) => {
 });
 
 router.get("/snippets", async (req, res) => {
+  let { filter } = req.query;
+  if (!filter) {
+    filter = "most_viewed";
+  }
+  let allowedFilters = ["most_viewed", "most_recent"];
+  if (!allowedFilters.includes(filter))
+    return res.status(400).json({ message: "Invalid filter provided" });
+
   try {
     const snippets = await prisma.snippet.findMany({
       where: {
         keepHidden: false,
       },
       orderBy: {
-        createdAt: "desc",
+        ...(filter && filter === "most_viewed" && { views: "desc" }),
+        ...(filter && filter === "most_recent" && { createdAt: "desc" }),
       },
     });
 

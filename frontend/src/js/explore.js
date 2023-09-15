@@ -1,14 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("http://localhost:3001/api/snippets").then(async (res) => {
-    if (!res.ok) {
-      window.location.replace("/");
-    } else {
-      document.getElementById("loading").remove();
-      const data = await res.json();
-      const { snippets } = data;
-      const snippetsContainer = document.getElementById("snippetsContainer");
+  // Getting the search query
+  const query = new URLSearchParams(window.location.search);
+  const filterQuery = query.get("filter");
+  let filterType = filterQuery ? filterQuery : "most_viewed";
 
-      snippetsContainer.innerHTML = `
+  // Make sure the filter is valid
+  if (!filterType === "most_viewed" || !filterType === "most_recent") {
+    filterType = "most_viewed";
+  }
+
+  fetch(`http://localhost:3001/api/snippets?filter=${filterType}`).then(
+    async (res) => {
+      if (!res.ok) {
+        window.location.replace("/");
+      } else {
+        document.getElementById("loading").remove();
+        const data = await res.json();
+        const { snippets } = data;
+        const snippetsContainer = document.getElementById("snippetsContainer");
+
+        snippetsContainer.innerHTML = `
       
         <div class="grid !m-5 !gap-3 !grid-cols-1 md:!grid-cols-2">
             ${snippets
@@ -51,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         
       `;
+      }
     }
-  });
+  );
 });
