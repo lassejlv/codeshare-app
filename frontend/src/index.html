@@ -17,6 +17,8 @@
     <title>Codeshare</title>
   </head>
   <body>
+    <include src="components/navbar.html"></include>
+
     <!-- Form to create a new codesnippet -->
     <form class="m-10" id="snippetForm">
       <!-- title -->
@@ -40,8 +42,15 @@
         <option value="null" selected>Select programming language</option>
       </select>
 
+      <p class="text-md text-gray-400">
+        Are we missing a language? <a href="/api?submit=true">Let us know!</a>
+      </p>
+
       <!-- Code -->
       <label for="code">Code</label>
+      <p class="text-md text-gray-400">
+        There are a max on 5000 characters and a minimum of 8 characters.
+      </p>
       <textarea
         name="code"
         id="code"
@@ -129,5 +138,8 @@
         <i class="fas fa-copy"></i> Copy
       </button>
     </div>
+
+    <!-- scripts -->
+    <script src="https://unpkg.com/includerjs@2.0.0/dist/includer-2.0.0.bundle.js"></script>
   </body>
 </html>

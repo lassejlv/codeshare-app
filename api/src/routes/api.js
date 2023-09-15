@@ -35,6 +35,28 @@ router.get("/snippet/:id", async (req, res) => {
   }
 });
 
+router.get("/snippets", async (req, res) => {
+  try {
+    const snippets = await prisma.snippet.findMany({
+      where: {
+        keepHidden: false,
+      },
+      orderBy: {
+        createdAt: "desc",
+      },
+    });
+
+    res.status(200).json({ snippets });
+  } catch (error) {
+    res.status(500).json({
+      error: "Unable to create snippet",
+      error: {
+        message: error.message,
+      },
+    });
+  }
+});
+
 router.post("/snippet/new", async (req, res) => {
   const { snippet } = req.body;
   if (!snippet) {

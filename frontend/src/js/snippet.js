@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="mt-4">
                     <pre><code class="language-${data.language}">${
           data.code
-        }</code></pre>
+        }</code></pre></div>
 
                     <div class="inline-flex items-end justify-end">
                         <button onclick="

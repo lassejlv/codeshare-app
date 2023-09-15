@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./dist/index.css" />
-    <script src="js/snippet.js" type="module"></script>
+    <script src="js/explore.js" type="module"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/arta.min.css"
@@ -19,8 +19,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
     <!-- Hillight.js -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <title>Codeshare - Snippet</title>
+    <title>Codeshare - Explore</title>
   </head>
   <body>
     <div
@@ -31,12 +35,11 @@
 
     <include src="../components/navbar.html"></include>
 
-    <div id="snippetContainer"></div>
+    <div id="snippetsContainer"></div>
 
     <script>
       hljs.highlightAll();
     </script>
-
     <!-- scripts -->
     <script src="https://unpkg.com/includerjs@2.0.0/dist/includer-2.0.0.bundle.js"></script>
   </body>

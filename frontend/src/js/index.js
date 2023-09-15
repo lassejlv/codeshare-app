@@ -13,7 +13,7 @@ const createdSnippetLink = document.getElementById("createdSnippetLink");
 title.onchange = function () {
   let value = title.value;
   console.log(value.length);
-  if (value.length < 3 || value.length > 20) {
+  if (value.length < 3 || value.length > 50) {
     title.setAttribute("aria-invalid", "true");
   } else {
     title.setAttribute("aria-invalid", "false");
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((data) => {
       data.forEach((language) => {
         const option = document.createElement("option");
-        option.value = language.name;
+        option.value = language.prefix;
         option.innerText = language.name;
         document.getElementById("language").appendChild(option);
       });
