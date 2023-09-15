@@ -20,6 +20,16 @@ router.get("/snippet/:id", async (req, res) => {
       });
 
       if (findSnippet) {
+        const updateViews = await prisma.snippet.update({
+          where: {
+            shortId: id,
+          },
+
+          data: {
+            views: findSnippet.views + 1,
+          },
+        });
+
         res.status(200).send(findSnippet);
       } else {
         res.status(404).json({ message: "Snippet not found" });
