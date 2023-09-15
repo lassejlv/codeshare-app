@@ -4,10 +4,12 @@
   "type": "module",
   "devDependencies": {
     "bun-types": "latest",
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.1",
     "prisma": "^5.3.0"
   },
   "scripts": {
-    "dev": "bun --watch run src/index.js",
+    "dev": "nodemon",
     "start": "npx prisma generate && node src/index.js"
   },
   "peerDependencies": {

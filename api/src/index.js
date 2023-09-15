@@ -1,3 +1,5 @@
+import { config } from "dotenv";
+config();
 import express from "express";
 const app = express();
 import apiRouter from "./routes/api.js";
@@ -13,6 +15,6 @@ app.use(
 
 app.use("/api", apiRouter);
 
-app.listen(parseInt(Bun.env.PORT), () => {
-  console.log(`Server listening on port ${Bun.env.PORT}`);
+app.listen(process.env.PORT, () => {
+  console.log(`Server listening on port ${process.env.PORT}`);
 });
