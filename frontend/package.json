@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "tailwind": "tailwindcss -i ./src/css/index.css -o ./src/dist/index.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9"
+  }
+}
