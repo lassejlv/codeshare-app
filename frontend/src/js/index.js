@@ -88,7 +88,7 @@ form.onsubmit = function (e) {
       form.reset();
       form.classList.add("hidden");
       createdSnippetArea.classList.remove("hidden");
-      createdSnippetLink.value = `${window.location.href}snippet.html?id=${data.snippet.shortId}`;
+      createdSnippetLink.value = `${window.location.href}snippet/?id=${data.snippet.shortId}`;
     })
     .catch((err) => {
       console.log(err.message);

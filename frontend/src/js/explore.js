@@ -38,9 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
                  
 
                      <div class="inline-flex items-end justify-end">
-                        <a role="button" href="/snippet.html?id=${
-                          snippet.shortId
-                        }">
+                        <a role="button" href="/snippet/?id=${snippet.shortId}">
                            View Snippet
                         </a>
                      </div>

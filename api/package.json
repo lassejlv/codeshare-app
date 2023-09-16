@@ -2,6 +2,7 @@
   "name": "api",
   "module": "src/index.js",
   "type": "module",
+  "license": "ISC",
   "devDependencies": {
     "bun-types": "latest",
     "dotenv": "^16.3.1",
@@ -9,7 +10,7 @@
     "prisma": "^5.3.1"
   },
   "scripts": {
-    "dev": "nodemon",
+    "dev": "node --watch src/index.js",
     "start": "npx prisma generate && node src/index.js"
   },
   "dependencies": {
