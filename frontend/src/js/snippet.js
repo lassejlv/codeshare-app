@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!id) return window.location.replace("/");
 
   // Fetch snippet
-  fetch(`http://localhost:3001/api/snippet/${id}`)
+  fetch(`http://localhost:5001/api/snippet/${id}`)
     .then(async (res) => {
       if (res.status === 400) {
         let password = prompt("Enter password to view snippet");
 
         if (password) {
           fetch(
-            `http://localhost:3001/api/snippet/${id}/password?password=${password}`
+            `http://localhost:5001/api/snippet/${id}/password?password=${password}`
           )
             .then(async (res) => {
               if (res.status === 400) {

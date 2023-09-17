@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.isOpen {
+  display: block !important;
+  position: absolute;
+  margin-top: 5rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.isOpen li {
+  display: block;
+}
+
+.isOpen #bars {
+  display: none;
+}

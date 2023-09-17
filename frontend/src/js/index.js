@@ -73,7 +73,7 @@ form.onsubmit = function (e) {
     requirePassword: data.get("requirePassword"),
   };
 
-  fetch("http://localhost:3001/api/snippet/new", {
+  fetch("http://localhost:5001/api/snippet/new", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

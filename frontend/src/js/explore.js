@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     filterType = "most_viewed";
   }
 
-  fetch(`http://localhost:3001/api/snippets?filter=${filterType}`).then(
+  fetch(`http://localhost:5001/api/snippets?filter=${filterType}`).then(
     async (res) => {
       if (!res.ok) {
         window.location.replace("/");
