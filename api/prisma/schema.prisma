@@ -1,26 +1,21 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Snippet {
-  id              String   @id @default(auto()) @map("_id") @db.ObjectId
-  shortId         String   @unique @default(cuid())
+  id              String   @id @default(uuid())
   title           String
   language        String
   code            String
   views           Int      @default(0)
   keepHidden      Boolean  @default(false)
   requirePassword Boolean  @default(false)
-  password        String
+  password        String?  @default("null")
   createdAt       DateTime @default(now())
   updatedAt       DateTime @updatedAt
 }
-

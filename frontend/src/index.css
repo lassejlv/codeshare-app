@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+button {
+  @apply bg-[#0f94c0] hover:bg-[#2596be] p-2 text-white;
+}
